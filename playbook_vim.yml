@@ -7,7 +7,13 @@
     - name: "package"
       prompt: "Quel paquet voulez-vous installer"
       private: no
-    - name: Version"
+    - name: "version"
       prompt: "Quelle version?"
       default: "latest"
       private: no    
+
+  tasks:
+    - name: install package
+      apt:
+        name: "{{ package }}"
+        state: "{{ version |default('latest') }}"
