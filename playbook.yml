@@ -1,10 +1,18 @@
 - hosts : remote
   gather_facts: false
+  //Le bloc ci-dessous pour déclarer les variables
   vars:
     src: test.txt
     dest: /home/ansible_user/test.txt
   tasks:
     - name: copy file to remote server
       copy:
+        //l'appel aux variables se fait avec "{{}}"
         src: "{{ src }}"
         dest: "{{ dest }}"
+
+
+//Installer les packages de mon choix, proposé lors du lancement d'un playbook avec la version
+proposer des packages linux vim,nginx, sl 
++ installer des packaes pip
+
