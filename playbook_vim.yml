@@ -17,3 +17,6 @@
       apt:
         name: "{{ package }}"
         state: "{{ version |default('latest') }}"
+        with_items: 
+          - vim
+          - nginx
